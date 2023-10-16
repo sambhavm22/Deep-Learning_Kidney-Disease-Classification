@@ -11,7 +11,7 @@ from typing import Any
 import base64
 
 @ensure_annotations
-def read_yaml(yaml_file:Path) -> ConfigBox:
+def read_yaml(yaml_file:str) -> ConfigBox:
     try:
         with open(yaml_file, 'r') as file:
             content = yaml.safe_load(file)
@@ -40,7 +40,7 @@ def save_json(json_file_path: Path, data: dict):
 def load_json(json_file_path: Path) -> ConfigBox:
     with open(json_file_path) as path:
         content = json.load(path) 
-    logger.info(f"json file loaded successfully from: {json_file_path}")
+    logger.info(f"json file loaded successfully from: {json_file_path       }")
     return ConfigBox(content)
 
 @ensure_annotations
