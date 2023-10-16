@@ -9,6 +9,7 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 import base64
+import tensorflow as tf
 
 @ensure_annotations
 def read_yaml(yaml_file:str) -> ConfigBox:
@@ -55,4 +56,6 @@ def decode_image(img_string, filename):
         f.write(img_data)
         f.close()
 
-            
+@staticmethod
+def save_model(path: Path, model:tf.keras.Model):
+    model.save(path)           
