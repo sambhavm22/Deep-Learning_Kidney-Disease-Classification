@@ -11,6 +11,7 @@ from typing import Any
 import base64
 import tensorflow as tf
 
+#@ensure_annotations use to define type of a function
 @ensure_annotations
 def read_yaml(yaml_file:str) -> ConfigBox:
     try:
@@ -22,7 +23,7 @@ def read_yaml(yaml_file:str) -> ConfigBox:
         raise ValueError("yaml file is empty")
     except Exception as e:
         raise e
-    
+
 @ensure_annotations
 def create_directories(directories_path: list, verbose = True):
     for path in directories_path:

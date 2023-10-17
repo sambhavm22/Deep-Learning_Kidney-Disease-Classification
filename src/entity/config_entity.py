@@ -1,3 +1,5 @@
+#entity is anything but the return type of any function
+
 from pathlib import Path
 from dataclasses import dataclass
 from src.constants import *
@@ -21,6 +23,16 @@ class PrepareBaseModelConfig:
     params_include_top: bool
     params_weights: str
 
+@dataclass(frozen=True)
+class TrainingConfig:
+    root_dir:Path
+    trained_model_path: Path
+    updated_base_model_path: Path
+    training_data: Path
+    params_batch_size: int
+    params_image_size: list
+    params_is_augmentation: bool
+    params_epochs: int
     
 
 
